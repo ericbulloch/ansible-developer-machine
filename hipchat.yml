@@ -1,0 +1,16 @@
+- hosts: dev
+  sudo: yes
+  tasks:
+  # Repository
+  - name: Add HipChat source list
+    action: file path=/etc/apt/sources.list.d/atlassian-hipchat.list state=touch
+  - name: Append HipChat repository in source list
+    action: lineinfile dest=/etc/apt/sources.list.d/atlassian-hipchat.list line='deb http://downloads.hipchat.com/linux/apt stable main'
+  - name: Add HipChat apt-key
+    action: apt_key url=https://www.hipchat.com/keys/hipchat-linux.key state=present
+
+  # Package
+  - name: apt-get update
+    action: apt update_cache=yes
+  - name: Install hipchat
+    action: apt pkg=hipchat state=present

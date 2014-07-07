@@ -1,0 +1,34 @@
+- hosts: dev
+  sudo: yes
+  tasks:
+  # Repositories
+  - name: Add git ppa
+    action: apt_repository repo=ppa:git-core/ppa state=present
+
+  # Packages
+  - name: apt-get update
+    action: apt update_cache=yes
+  - name: Install figlet
+    action: apt pkg=figlet state=present
+  - name: Install pip
+    action: apt pkg=python-pip state=present
+  - name: Install python-dev
+    action: apt pkg=python-dev state=present
+  - name: Install keepassx
+    action: apt pkg=keepassx state=present
+  - name: Install unzip
+    action: apt pkg=unzip state=present
+  - name: Install virtualbox
+    action: apt pkg=virtualbox-qt state=present
+  - name: Install vagrant
+    action: apt pkg=vagrant state=present
+  - name: Install supervisor
+    action: apt pkg=supervisor state=present
+  - name: Install nfs-kernel-server
+    action: apt pkg=nfs-kernel-server state=present
+  - name: Install mysql-server
+    action: apt pkg=mysql-server state=present
+  - name: Install git
+    action: apt pkg=git state=present
+  - name: Install chromium-browser
+    action: apt pkg=chromium-browser state=present

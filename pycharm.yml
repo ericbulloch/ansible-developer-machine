@@ -1,0 +1,16 @@
+- hosts: dev
+  sudo: yes
+  tasks:
+  # Repository
+  - name: Add PyCharm source list
+    action: file path=/etc/apt/sources.list.d/jetbrains-pycharm.list state=touch
+  - name: Append PyCharm repository in source list
+    action: lineinfile dest=/etc/apt/sources.list.d/jetbrains-pycharm.list line='deb http://archive.getdeb.net/ubuntu trusty-getdeb apps'
+  - name: Add PyCharm apt-key
+    action: apt_key url=http://archive.getdeb.net/getdeb-archive.key state=present
+
+  # Package
+  - name: apt-get update
+    action: apt update_cache=yes
+  - name: Install pycharm
+    action: apt pkg=pycharm state=present

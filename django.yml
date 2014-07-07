@@ -1,0 +1,8 @@
+- hosts: dev
+  sudo: yes
+  tasks:
+  # Packages
+  - name: Install pip
+    action: apt pkg=python-pip state=present
+  - name: pip install Django
+    action: pip name=Django
