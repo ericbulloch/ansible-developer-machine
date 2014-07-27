@@ -19,5 +19,5 @@
     lineinfile: dest=~/.bashrc line='GIT_PS1_SHOWUPSTREAM="auto verbose"'
   - name: Append "hostname | figlet -w -c" in .bashrc
     lineinfile: dest=~/.bashrc line='hostname | figlet -w -c'
-  - name: Append coloring for the command lineinfile
+  - name: Append coloring for the command in .bashrc
     lineinfile: dest=~/.bashrc line="PS1='\[\033[01;32m\]\u@\h\[\033[01;37m\]:\[\033[01;34m\]\W\[\033[31m\]$(\"__git_ps1\")\[\033[00m\]$'"
