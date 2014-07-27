@@ -1,34 +1,31 @@
 - hosts: dev
   sudo: yes
   tasks:
-  # Repositories
   - name: Add git ppa
-    action: apt_repository repo=ppa:git-core/ppa state=present
-
-  # Packages
+    apt_repository: repo=ppa:git-core/ppa state=present
   - name: apt-get update
-    action: apt update_cache=yes
+    apt: update_cache=yes
   - name: Install figlet
-    action: apt pkg=figlet state=present
+    apt: name=figlet state=present
   - name: Install pip
-    action: apt pkg=python-pip state=present
+    apt: name=python-pip state=present
   - name: Install python-dev
-    action: apt pkg=python-dev state=present
+    apt: name=python-dev state=present
   - name: Install keepassx
-    action: apt pkg=keepassx state=present
+    apt: name=keepassx state=present
   - name: Install unzip
-    action: apt pkg=unzip state=present
+    apt: name=unzip state=present
   - name: Install virtualbox
-    action: apt pkg=virtualbox-qt state=present
+    apt: name=virtualbox-qt state=present
   - name: Install vagrant
-    action: apt pkg=vagrant state=present
+    apt: name=vagrant state=present
   - name: Install supervisor
-    action: apt pkg=supervisor state=present
+    apt: name=supervisor state=present
   - name: Install nfs-kernel-server
-    action: apt pkg=nfs-kernel-server state=present
+    apt: name=nfs-kernel-server state=present
   - name: Install mysql-server
-    action: apt pkg=mysql-server state=present
+    apt: name=mysql-server state=present
   - name: Install git
-    action: apt pkg=git state=present
+    apt: name=git state=present
   - name: Install chromium-browser
-    action: apt pkg=chromium-browser state=present
+    apt: name=chromium-browser state=present

@@ -1,20 +1,19 @@
 - hosts: dev
   sudo: no
   tasks:
-  # .bashrc additions
   - name: Append runserver_plus .bashrc alias
-    action: lineinfile dest=~/.bashrc line='alias rsp="python manage.py runserver_plus 0.0.0.0:8001 --settings=project.settings.dev"'
+    lineinfile: dest=~/.bashrc line='alias rsp="python manage.py runserver_plus 0.0.0.0:8001 --settings=project.settings.dev"'
   - name: Append shell_plus .bashrc alias
-    action: lineinfile dest=~/.bashrc line='alias sp="python manage.py shell_plus --settings=project.settings.dev"'
+    lineinfile: dest=~/.bashrc line='alias sp="python manage.py shell_plus --settings=project.settings.dev"'
   - name: Append dbshell .bashrc alias
-    action: lineinfile dest=~/.bashrc line='alias ds="python manage.py dbshell --settings=project.settings.dev"'
+    lineinfile: dest=~/.bashrc line='alias ds="python manage.py dbshell --settings=project.settings.dev"'
   - name: Append source bin/activate .bashrc alias
-    action: lineinfile dest=~/.bashrc line='alias sba="source bin/activate"'
+    lineinfile: dest=~/.bashrc line='alias sba="source bin/activate"'
   - name: Append GIT_PS1_SHOWDIRTYSTATE=true in .bashrc
-    action: lineinfile dest=~/.bashrc line='GIT_PS1_SHOWDIRTYSTATE=true'
+    lineinfile: dest=~/.bashrc line='GIT_PS1_SHOWDIRTYSTATE=true'
   - name: Append GIT_PS1_SHOWSTASHSTATE=true in .bashrc
-    action: lineinfile dest=~/.bashrc line='GIT_PS1_SHOWSTASHSTATE=true'
+    lineinfile: dest=~/.bashrc line='GIT_PS1_SHOWSTASHSTATE=true'
   - name: Append GIT_PS1_SHOWUPSTREAM="auto verbose" in .bashrc
-    action: lineinfile dest=~/.bashrc line='GIT_PS1_SHOWUPSTREAM="auto verbose"'
+    lineinfile: dest=~/.bashrc line='GIT_PS1_SHOWUPSTREAM="auto verbose"'
   - name: Append "hostname | figlet -w -c" in .bashrc
-    action: lineinfile dest=~/.bashrc line='hostname | figlet -w -c'
+    lineinfile: dest=~/.bashrc line='hostname | figlet -w -c'

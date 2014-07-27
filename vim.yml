@@ -1,14 +1,11 @@
 - hosts: dev
   sudo: yes
   tasks:
-  # Package
   - name: apt-get update
-    action: apt update_cache=yes
+    apt: update_cache=yes
   - name: Install vim
-    action: apt pkg=vim state=present
-  # Line numbers are always enabled
+    apt: name=vim state=present
   - name: Append :set number in vimrc
-    action: lineinfile dest=/etc/vim/vimrc line=':set number'
-  # Set the colorscheme
+    lineinfile: dest=/etc/vim/vimrc line=':set number'
   - name: Append colorscheme elflord in vimrc
-    action: lineinfile dest=/etc/vim/vimrc line='colorscheme elflord'
+    lineinfile: dest=/etc/vim/vimrc line='colorscheme elflord'
