@@ -9,6 +9,8 @@
     lineinfile: dest=~/.bashrc line='alias ds="python manage.py dbshell --settings=project.settings.dev"'
   - name: Append source bin/activate .bashrc alias
     lineinfile: dest=~/.bashrc line='alias sba="source bin/activate"'
+  - name: Append vagrant ssh .bashrc alias
+    lineinfile: dest=~/.bashrc line='alias vs="vagrant ssh"'
   - name: Append GIT_PS1_SHOWDIRTYSTATE=true in .bashrc
     lineinfile: dest=~/.bashrc line='GIT_PS1_SHOWDIRTYSTATE=true'
   - name: Append GIT_PS1_SHOWSTASHSTATE=true in .bashrc

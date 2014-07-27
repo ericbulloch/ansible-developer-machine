@@ -1,9 +1,9 @@
 - hosts: dev
   sudo: yes
   tasks:
-  - name: Add git ppa
+  - name: Add sublime-text ppa
     apt_repository: repo=ppa:webupd8team/sublime-text-2 state=present
   - name: apt-get update
     apt: update_cache=yes
-  - name: Install hipchat
-    apt: name=sublime-text-2 state=present
+  - name: Install sublime-text
+    apt: name=sublime-text state=present
