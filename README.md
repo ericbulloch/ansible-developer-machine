@@ -16,10 +16,10 @@ To run a specific playbook run the following:
 ansible-playbook playbook
 
 Examples:
-ansible-playbook bashrc.yml
-ansible-playbook packages.yml
-ansible-playbook django.yml
-ansible-playbook hipchat.yml
-ansible-playbook vim.yml
-ansible-playbook sublime.yml
-ansible-playbook pycharm.yml
+`ansible-playbook bashrc.yml`
+`ansible-playbook packages.yml`
+`ansible-playbook django.yml`
+`ansible-playbook hipchat.yml`
+`ansible-playbook vim.yml`
+`ansible-playbook sublime.yml`
+`ansible-playbook pycharm.yml`
