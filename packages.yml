@@ -29,3 +29,5 @@
     apt: name=git state=present
   - name: Install chromium-browser
     apt: name=chromium-browser state=present
+  - name: Install postfix
+    apt: name=postfix state=present
